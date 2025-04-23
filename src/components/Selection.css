@@ -1,0 +1,148 @@
+/* Base Styles for Moodlet and Dropdown */
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Public Sans', sans-serif;
+  }
+  
+  .moodlet-group {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .moodlet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative; /* Make sure dropdown can be positioned correctly */
+  }
+  
+  .moodlet-icon {
+    position: relative;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .moodlet-label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  .moodlet-letter {
+    position: relative;
+    top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #2C2541;
+  }
+  
+  .moodlet-state {
+    font-size: 10px;
+    color: #555;
+    margin-top: 4px;
+  }
+  
+  .moodlet-required {
+    background-color: #fffae6;
+    border: 2px solid #fcd600; /* yellow */
+  }
+  
+  .moodlet-current {
+    background-color: #e3f7ff;
+    border: 2px solid #00aaff; /* blue */
+  }
+  
+  .moodlet-completed {
+    background-color: #e7f7e7;
+    border: 2px solid #5dbb5d; /* green */
+  }
+  
+  .moodlet-not-required {
+    background-color: #f5f5f5;
+    border: 2px solid #ccc; /* gray */
+  }
+  
+  /* Dropdown styles */
+  .dropdown {
+    position: absolute;
+    top: 100%; /* Place below the moodlet */
+    left: 0;
+    z-index: 10;
+  }
+  
+  .dropdown-toggle {
+    background-color: #f5f5f5;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .arrow {
+    margin-left: 8px;
+  }
+  
+  .dropdown-menu {
+    margin-top: 6px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-item {
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .moodlet:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Moodlet state specific styles */
+  .moodlet:hover.moodlet-required {
+    background-color: #ffec99;
+  }
+  
+  .moodlet:hover.moodlet-current {
+    background-color: #c1e8f7;
+  }
+  
+  .moodlet:hover.moodlet-completed {
+    background-color: #c1e7c1;
+  }
+  
+  .moodlet:hover.moodlet-not-required {
+    background-color: #f0f0f0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .moodlet-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
