@@ -21,6 +21,9 @@ const Selection = ({ type = 'F', initialState = 'required' }) => {
   };
 
   const handleLeftClick = () => {
+    const isDropdownArea = event.target.closest('.dropdown');
+    if (isDropdownArea) return;
+
     if (moodletState === 'required') {
       setMoodletState('current');
     } else if (moodletState === 'current') {
@@ -30,7 +33,7 @@ const Selection = ({ type = 'F', initialState = 'required' }) => {
     }
   };
 
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
   return (
     <div
