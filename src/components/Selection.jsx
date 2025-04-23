@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Selection.css'; // Import the styles
+import './Selection.css';
 
 const iconMap = {
   F: <span role="img" aria-label="fuelling">⛽</span>,
@@ -15,7 +15,7 @@ const Selection = ({ type = 'F', initialState = 'required' }) => {
     event.preventDefault();
     if (moodletState === 'required') {
       setMoodletState('not required');
-    } else if (moodletState === 'not required') {
+    } else if (moodletState === 'not required' || moodletState === 'completed')  {
       setMoodletState('required');
     }
   };
